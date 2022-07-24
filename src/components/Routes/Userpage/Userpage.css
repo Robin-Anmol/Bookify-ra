@@ -1,0 +1,212 @@
+.userpage {
+  display: grid;
+  grid-template-columns: 250px 3fr;
+
+  grid-gap: 40px;
+  padding-top: 20px;
+  height: calc(100vh - 160px);
+}
+.userpage > div {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.userdiv {
+  position: relative;
+  padding: 10px;
+  height: 500px;
+}
+.userdiv .profileimg .abs {
+  left: 10px;
+  top: 10px;
+}
+.userdiv .profileimg {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pdng {
+  width: 90px;
+  height: 90px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: var(--shadow-blue);
+}
+.userdiv .profileimg img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.spacer2 {
+  height: 18vh;
+}
+.userdiv {
+  min-width: 250px;
+}
+.generalinfo {
+  justify-content: center;
+  margin: 30px 0;
+  align-items: center;
+  width: 100%;
+}
+.generalinfo span {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+.generalinfo > span:nth-of-type(2) {
+  margin: 0 5px;
+}
+.vertical {
+  width: 0.5px;
+  height: 50px;
+}
+.userdescription {
+  margin-top: 10px;
+  font-size: 14px;
+  height: 20%;
+  word-break: break-all;
+  overflow-y: scroll;
+}
+.userdescription::-webkit-scrollbar {
+  width: 0px;
+}
+.userroutes {
+  overflow: hidden;
+}
+.linkstab {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+}
+.linkstab a {
+  background-color: #f2f5f8;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  height: 64px;
+}
+.linkstab a:hover,
+.linkstab .activelinktab {
+  background-color: #f8f8f8;
+}
+.linkstab i {
+  margin-right: 10px;
+}
+.routestab {
+  padding: 10px;
+  height: calc(100% - 64px);
+  overflow-y: scroll;
+}
+.routestab::-webkit-scrollbar {
+  width: 0px;
+}
+
+.profiletab .cover img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  height: 200px;
+}
+.recentposts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.recentposts a:active {
+  transform: scale(0.95);
+}
+.recentposts .recentpostimg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.recentpostimg {
+  position: relative;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 130px;
+  height: 130px;
+  box-shadow: var(--shadow);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.recentposts .recentpostimg .titlecover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+.recentpostimg:hover .titlecover {
+  opacity: 1;
+}
+.textoverflow {
+  width: 100%;
+  word-wrap: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.userroutes .defaultmsg {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+.userroutes .defaultmsg i {
+  font-size: 30px;
+}
+.texts p {
+  margin-bottom: 25px;
+}
+.userroutes h2 {
+  margin: 25px 0;
+}
+.aboutuser {
+  padding: 0 50px;
+}
+.aboutuser div .textoverflow {
+  display: flex;
+  justify-content: space-between;
+}
+.allposts {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.allposts .book,
+.allposts .book .img {
+  height: 200px;
+}
+.userpage .book .buttoncont > .flexrow {
+  display: none;
+}
+
+.allposts .book {
+  margin-bottom: 20px;
+  box-shadow: none;
+  border: solid 2px #f0f0f0;
+}
+@media (max-width: 700px) {
+  .linkstab a span {
+    display: none;
+  }
+}

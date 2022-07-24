@@ -1,0 +1,189 @@
+.booksdisplay {
+  height: calc(100% - 95px);
+  padding: 10px 15px;
+  position: relative;
+}
+
+.gridbooks .trendingbooks {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gridbooks .book {
+  width: 150px;
+  height: 200px;
+  margin-right: 15px
+}
+.gridbooks .book .img {
+  height: 200px
+}
+.gridbooks .book {
+  display: block
+}
+.gridbooks .book .info{
+  display: none;
+}
+.userdisplay {
+  padding: 0 10px
+}
+.booksdisplay h3 {
+  margin-bottom: 10px
+}
+h2.title {
+  overflow-x: hidden;
+  padding: 0px 15px;
+  text-overflow: ellipsis; 
+
+}
+datalist#datalist {
+  width: 100%
+}
+input#datalist {
+  width: 60%
+}
+.routes h2.title::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+.filters {
+  padding: 20px 10px;
+  position: fixed;
+  max-height: 60%;
+  height: 500px;
+  overflow-y: scroll
+}
+.filters::-webkit-scrollbar {
+  width: 0px;
+}
+.userdisplay > i {
+  font-size: 23px;
+  margin-right: 10px
+}
+.userdisplay button {
+  border-radius: 5px;
+  background-color: #eee;
+  width: 150px;
+  max-width: 100%;
+}
+.top .userdisplay i{
+  color: #000;
+}
+.labelicon {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.labelicon:active {
+  transform: scale(0.95)
+}
+.labelicon:hover {
+  background-color: #f2f5f8
+}
+.labelicon:hover i {
+  background-color: var(--theme-color);
+  color: #fff;
+}
+.labelicon:hover  p {
+  color:var(--theme-color)
+}
+.labelicon i {
+  padding: 10px;
+  background-color:var(--gray);
+  margin-right: 10px;
+  border-radius: 10px;
+  color: black
+}
+.labelicon.active {
+  background-color: var(--gray)
+}
+.labelicon.active i {
+    background-color: var(--theme-color);
+    color: white;
+}
+.labelicon p {
+  transition: none
+}
+.labelicon.active p {
+  color: var(--theme-color)
+}
+.trendingbooks {
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column-reverse
+}
+.trendingbooks .book{
+  margin-bottom: 20px
+}
+
+.defaultmsg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  padding: 10px; 
+  transition: all 0.3s;
+   border-radius: 20px;
+   margin: 20px 10%
+}
+.defaultmsg:active {
+  transform: scale(0.95)
+}
+.defaultmsg:hover {
+  background-color: var(--gray);
+
+}
+.defaultmsg i {
+  font-size:35px;
+}
+.defaultmsg span {
+  font-weight: bold;
+  margin-top: 5px;
+  text-align: center;
+}
+.morefilters {
+  position: fixed;
+  width: 300px;
+  background-color: #fff;
+  max-width: 100%;
+  z-index: 901;
+  height: 100vh;
+  top: -100px;
+  box-shadow: var(--shadow);
+  border-radius: 10px 0 0 10px;
+  padding: 20px;
+  overflow-y: scroll;
+  transition: all 0.3s;
+  opacity: 0;
+  right: -100%;
+  top: 0;
+}
+
+.morefilters-enter-done {
+  right: 0;
+  opacity: 1;
+  
+}
+.morefilters::-webkit-scrollbar {
+  width: 0px
+}
+.morefilters .labelicon p {
+  display: block
+}
+.morefilters .times {
+  position: absolute;
+  right: 10px;
+  top: 15px
+}
+.morefilters .settingslabel input {
+  width: 100%;
+  text-transform: capitalize;
+
+}

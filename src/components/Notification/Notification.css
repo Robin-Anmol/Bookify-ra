@@ -1,0 +1,41 @@
+.notification {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -200px;
+  transition: all 0.3s;  
+  z-index: var(--high-priority);  
+  width:400px;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center
+}
+.notification .fa-times, .notification .fa-exclamation-circle, .notification .fa-check-circle {
+  position: absolute;
+  transform: translateY(-50%) ;
+  top: 50%;
+}
+.notification .fa-times {
+  right: 20px     
+}
+.notification .fa-exclamation-circle, .notification .fa-check-circle {
+  left: 20px;
+  color: rgb(255, 67, 67)
+  
+}
+.notification .fa-check-circle {
+  color: rgb(44, 255, 44);
+}
+.notification-enter-done {
+  top: 10px;
+  color: black
+}
+.fixednoti {
+  top: -100px;
+  position: fixed;
+  width: 400px;
+}
+.fixednoti.notification-enter-done {
+  top: 100px
+}

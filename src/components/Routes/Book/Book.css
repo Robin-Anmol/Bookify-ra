@@ -1,0 +1,344 @@
+
+.gridbooks .book {
+  transition: height 0.3s
+}
+.book {
+  position: relative;
+  display: grid;
+  grid-template-columns: 33% 66%;
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+.book .img:hover {
+  background-color:  #e6f6ff;
+}
+.book .img {
+  transition: all 0.3s;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 300px;
+  background-color: rgb(240, 240, 240);
+}
+.book img {
+width: 100%;
+height: 100%;
+object-fit: contain
+}
+.gridbooks .book img {
+  object-fit: cover;
+  border-radius: 10px
+}
+.book .info {
+  padding: 10px;
+  grid-column: 2/-1
+}
+
+.book p span {
+  font-size: 14px;
+  color: rgb(179, 179, 179);
+  text-transform: capitalize
+}
+.book .info .fa-bookmark {
+  position: absolute;
+  left: 10px
+}
+.fa-save {
+  margin-bottom: 5px
+}
+.info .section1 p{
+    margin-top: 10px;
+}
+.section1 h3 {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+
+}
+.gridbooks .screen.test-enter-done + .editbook {
+  width: 90%;
+  height: 300px;
+} 
+.gridbooks .editbook .edit .musttobe{
+  display: none; 
+}
+
+.gridbooks .screen.test-enter-done + .editbook {
+  position: absolute;
+  z-index:1000;
+  transition: all 0.3s;
+  background-color: white;  
+} 
+.gridbooks .screen.test-enter-done + .editbook {
+  display: grid;
+}
+
+.gridbooks  .screen.test-enter-done + .editbook .hidenonegrid {
+  position: absolute;
+  right: 20px;
+  top:10px;
+  display: flex;
+}
+.gridtitlebook {
+  display: none
+}
+.gridbooks .gridtitlebook {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  opacity: 0;
+  padding: 10px;
+  flex-direction: column
+}
+.gridtitlebook * {
+  font-size: 16px;
+}
+.gridbooks .book:hover .gridtitlebook{
+  opacity: 1;
+}
+.booksdisplay .book .hidenonegrid{
+  display: none;
+}
+.gridbooks  .screen.test-enter-done + .editbook  .img  {
+  height: 300px
+}
+.gridbooks .screen.test-enter-done + .editbook .info{
+  display: block;
+}
+.gridbooks .editbook .gridicondone {
+  opacity: 0;
+  transition-property: background-color 0.3s, scale 0.3s;
+}
+.gridbooks .screen.test-enter-done + .editbook, .gridbooks .screen.test-enter-done + .editbook .gridicondone {
+  opacity: 1; 
+  z-index: 1001;
+}
+.gridbooks .screen {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(128, 128, 128, 0.363);
+  top: 0;
+  z-index: 1000;
+}
+.gridbooks .editbook .morefilters {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  opacity: 1;
+  top: 0;
+  padding: 30px 10%;
+}
+.editdivcont .fa-times{
+  position: absolute;
+  right: 30px;
+}
+.book .edit {
+  position: absolute;
+  right: 10px;
+  top: 10px
+}
+.book .edit i:first-of-type {
+  margin-bottom: 5px
+}
+.editbook .fill {
+  position: absolute;
+  right: 10px;
+  height: 100%;
+  width: 12px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px 0;
+}
+.editbook .fill .fillbackground {
+  width: 8px;
+  height:0%;
+} 
+
+.info .midsection {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.midsection button {
+  border-radius: 5px;
+}
+.info .midsection p{
+  margin-top: 5px;
+}
+.awards {
+  display: flex;
+  margin-top: 5px;
+  overflow-x: scroll;
+  width: 100%
+}
+.awards::-webkit-scrollbar {
+  height:0px;
+}
+.award {
+  background-color: rgba(209, 209, 209, 0.288);
+  margin-right: 5px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: #000;
+  border-radius: 30px;
+  text-align:  center;
+  min-width: max-content;
+  margin-bottom: 5px
+}
+.info .buttoncont {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.buttoncont .bookbtn {
+  width: max-content;
+  padding: 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  background-color: #f2f5f8
+}
+.buttoncont > .flexrow {
+  align-items: flex-end
+}
+.bookbtn:hover {
+  background-color: rgb(223, 223, 223)
+}
+.bookbtn i {
+  margin-right: 5px;
+}
+.section3 {
+  position: absolute;
+  bottom: 10%;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  background-color: rgba(209, 209, 209, 0.288);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.userlink:active {
+  transform: scale(0.95)
+}
+.userlink {
+  border-radius: 10px;
+}
+.userlink:hover {
+  background-color: var(--gray)
+}
+.profile .infoBook {
+  font-size: 13px
+}
+.profile .infoBook small {
+  color: rgb(128, 128, 128);
+}
+.switchpro > .switchdiv{
+  width: 60%;
+  margin: 10px 0;
+}
+.profile .userimg img {
+  width: 35px;  
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 7px;
+  object-fit: cover;
+  margin-left: 0px;
+}
+
+.userlink:hover {
+  background-color: var(--gray)
+}
+.editbook {
+  overflow: hidden;
+}
+.editbook .info {
+  height: 300px;
+  overflow-y: scroll
+}
+.editbook label.img {
+  cursor: pointer;
+  position: relative
+}
+.editbook .info::-webkit-scrollbar {
+  width: 0px;
+}
+.editbook .edit {
+  z-index: var(--medium-priority);
+}
+.editbook .section1{
+  display: flex;
+  flex-direction: column;
+  display: flex; 
+}
+.inputscontainerbook {
+  display: flex;
+  flex-direction: column;
+}
+.editbookinput {
+  background-color: var(--gray);
+  margin-bottom: 10px;
+}
+.editimgcover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.527);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.editimgcover i {
+  font-size: 23px;
+  width:40px;
+  height: 40px;
+}
+.editimgcover:hover i {
+  transform: translateY(-20px)
+}
+.book .fa-bookmark {
+  position: absolute;
+  top: 10px;
+  left: 10px
+}
+.protag {
+  position: absolute;
+  right: 0;
+  background-color: var(--gray);
+  padding: 5px 10px;
+  border-radius: 0 0 0 10px;
+  font-size: 12px;
+}
+@media (max-width: 630px){
+  .book {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+  }
+  .book .info {
+    height: 100%;
+  }
+
+  .trendingbooks {
+    width: 100%;
+  }
+}

@@ -1,0 +1,120 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: all 0.3s;
+  background-color: #f2f5f8;
+  z-index: 901;
+  height: 55px;
+}
+.navbarspacer {
+  height: 70px;
+  position: relative;
+  background-color: #f2f5f8;
+}
+.navbar h2 {
+  color: #000;
+  font-size: 20px;
+}
+
+.blurrednav .NavLinks i,
+.blurrednav h2 {
+  color: black;
+}
+.mainlogocont .logo {
+  cursor: pointer;
+  align-items: center;
+}
+.NavLinks {
+  display: flex;
+  align-items: center;
+}
+.NavLinks i {
+  font-size: 20px;
+  color: #fff;
+}
+.NavLinks i:hover {
+  color: var(--theme-color);
+}
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: #f8f8f8;
+  border-radius: 30px;
+  width: 200px;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.user:active {
+  transform: scale(0.97);
+}
+.user i {
+  color: #000;
+}
+.user p {
+  transition: all 0.3s;
+}
+.user:hover {
+  background-color: var(--theme-color);
+}
+.user:hover i,
+.user:hover p {
+  color: #fff;
+}
+.user .fa-user-circle {
+  font-size: 23px;
+}
+.user img {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+.input {
+  margin-left: 10px;
+  align-items: center;
+  position: relative;
+}
+.input input {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: solid 1px #ddd;
+}
+.input i {
+  position: absolute;
+  right: 10%;
+}
+.menu {
+  position: absolute;
+}
+@media (max-width: 670px) {
+  .navbar {
+    padding: 10px 5px;
+  }
+  .navbar .input {
+    margin-left: 10px;
+  }
+  .navbar .input input {
+    width: 130px;
+  }
+  .navbar .user {
+    width: 150px;
+  }
+  .navbar .user p {
+    font-size: 12px;
+  }
+  .navbar .user i {
+    font-size: 14px;
+  }
+}
+@media (max-width: 450px) {
+  .mainlogocont .logo h2 {
+    display: none;
+  }
+}

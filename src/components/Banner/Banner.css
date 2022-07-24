@@ -1,0 +1,49 @@
+.bannercreate {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 100%;
+  min-height: 300px;
+}
+.bannercreate > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 40%;
+  padding: 10px;
+  border-radius: 10px;
+}
+.bannercreate > div * {
+  margin: 10px 0;
+}
+.bannercreate div h2 {
+  padding: 0;
+  color: #000000;
+}
+.bannerBtn {
+  background-color: #61c3ea;
+  color: white;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.bannercreate .infobanner small {
+  font-size: 15px;
+  color: #000000;
+}
+.bannerBtn i {
+  color: #fff;
+  margin-right: 10px;
+}
+@media (max-width: 650px) {
+  .bannercreate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .bannercreate > div {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.774);
+  }
+}

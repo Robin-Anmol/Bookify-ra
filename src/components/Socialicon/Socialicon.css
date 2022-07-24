@@ -1,0 +1,33 @@
+.socialicon i {
+  font-size: 22px;
+  width: 35px;
+  height: 35px;
+}
+.socialicon .fa-facebook {
+  color: #4c69ba;
+}
+.socialicon i.fa-facebook:hover {
+  background-color: #4c69ba;
+  color: #fff;
+}
+.socialicon i.fa-instagram {
+  color: #cd486b;
+}
+.socialicon i.fa-instagram:hover {
+  background-color: #cd486b;
+  color: #fff;
+}
+.socialicon i.fa-twitter {
+  color: #00acee;
+}
+.socialicon i.fa-twitter:hover {
+  color: #fff;
+  background-color: #00acee;
+}
+.socialicon i.fa-pinterest {
+  color: #e60023;
+}
+.socialicon i.fa-pinterest:hover {
+  color: #fff;
+  background-color: #e60023;
+}

@@ -1,0 +1,44 @@
+
+.allusers .allusersgrid{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.allusersgrid .aboutuser {
+  width: 150px;
+  height: 170px;
+  padding: 0;
+  margin: 10px;
+  border: solid 1px rgb(216, 216, 216);
+  border-radius: 15px
+}
+.allusers .bannercreate .infobanner h2, .allusers .bannercreate .infobanner small{
+  color: #000;
+}
+.allusersgrid .aboutuser .profilepic {
+  flex-direction: column;
+}
+.allusers .aboutuser .bannerBtn {
+  width: 100px;
+}
+.allusers .aboutuser .profilepic {
+  width: 100%;
+  height: 100%
+}
+.allusers .aboutuser .profilepic >div {
+  flex-direction: column;
+}
+.allusers .aboutuser a img{
+  margin-bottom: 10px
+}
+.allusers .bannercreate h2, .allusers .bannercreate small {
+  color: #fff;
+}
+.buttns {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
