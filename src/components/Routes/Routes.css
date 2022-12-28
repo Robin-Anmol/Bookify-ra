@@ -1,0 +1,77 @@
+.routes {
+  background-color:var(--light-gray);
+  padding: 0px 10%;
+  min-height: calc(100% - 55px) 
+}
+.spacer {
+  height: 200vh;
+}
+.mediafilters.flexrow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  position: sticky;
+  top: 55px;
+  z-index: var(--max-priority);
+  background-color: var(--gray);
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}
+.body .routes > .defaultmsg {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  max-width: 80%;
+  transform: translateX(-50%) translateY(-50%)
+}
+@media (max-width: 1050px) {
+  .routes {
+    padding: 10px;
+  }
+  .routes  h2{
+  padding: 0  20px
+}
+  .routes .booksdisplay {
+    grid-template-columns: 1fr;
+  }
+  .routes .booksdisplay .filters {
+    display: none;
+  }
+
+.routes  .trendingbooks {
+    grid-column: 1/-1 ;
+  }
+
+}
+.notificationsroute .overflow{
+    max-height: 100%;
+    box-shadow: none;
+    padding-top: 0
+}
+.notificationsroute .defaultmsg i{
+  font-size: 35px
+}
+.notificationsroute .notifications > h2 {
+  display: none
+}
+@media (max-width: 740px){ 
+  .labelicon p {
+    display: none
+  }
+
+}
+@media (max-width: 650px) {
+ .body .overflow {
+    padding: 40px 24px;
+    padding-right: 4px;
+    box-shadow: none;
+    border: solid 1px rgb(221, 221, 221)
+
+  }
+ .body h3 {
+    font-size: 16px
+  }
+}

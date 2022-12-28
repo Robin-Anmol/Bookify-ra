@@ -1,0 +1,43 @@
+{
+  "name": "BookStore",
+  "version": "1.0.0",
+  "description": "Bookify ",
+  "author": "robin_anmol",
+  "keywords": [
+    "pdf dowload ",
+    "react",
+    "firebase"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@babel/runtime": "7.13.8",
+    "@emotion/core": "11.0.0",
+    "@emotion/react": "11.1.5",
+    "firebase": "8.2.10",
+    "framer-motion": "3.10.2",
+    "immutability-helper": "3.1.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-loader-spinner": "4.0.0",
+    "react-router-dom": "5.2.0",
+    "react-router-hash-link": "2.4.0",
+    "react-scripts": "4.0.0",
+    "react-spinners": "0.10.6",
+    "react-textarea-autosize": "8.3.2",
+    "react-time-ago": "6.2.2",
+    "react-transition-group": "4.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

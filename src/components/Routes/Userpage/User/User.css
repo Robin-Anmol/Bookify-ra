@@ -1,0 +1,21 @@
+.profilepic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+.aboutuser {
+  transition: all 0.3s
+}
+.aboutuser button:active {
+  transform: scale(0.95)
+}
+.profilepic:hover {
+  background-color: var(--light);
+}
+.profilepic img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

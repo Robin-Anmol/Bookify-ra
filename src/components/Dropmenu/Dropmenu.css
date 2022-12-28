@@ -1,0 +1,44 @@
+.menu {
+  width: 200px;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transition: all 0.3s;
+  top: 200px;
+}
+.menu-enter-done{
+  top: 60px;
+  opacity: 1;
+
+}
+.menu a, .navbar .menu i  {
+  color: #b8b8b8;
+  font-size: 14px
+}
+.menutitle {
+  padding: 8px 10px;
+  font-size: 14px
+}
+.menu .menulink {
+  padding:  5px 10px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center
+}
+.menulink:hover {
+  background-color: var(--gray)
+}
+.menulink:last-of-type {
+  border-radius: 0 0 10px 10px
+}
+.menulink i, .menulink p {
+  transition: none;
+
+}
+.menulink:hover i, .menulink:hover p {
+  color: var(--theme-color);
+}
+.menulink i {
+  margin-right: 10px;
+}

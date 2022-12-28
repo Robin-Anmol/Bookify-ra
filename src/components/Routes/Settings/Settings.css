@@ -1,0 +1,362 @@
+.body .hide + .routes {
+  min-height: 100%
+}
+.body .hide + .routes {
+  padding: 0;
+}
+.settings {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 100%;
+  min-height: 100vh
+}
+.settings .sidepannel {
+  background-color: var(--gray);
+}
+.sidepannel {
+  display: flex;
+  flex-direction: column;
+}
+.routes .sidepannel h2 {
+  padding: 30px
+}
+.sidepannel .settingslink  {
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 2px transparent;
+  transition: all 0.3s;
+}
+.settingslink i {
+  color: black;
+  margin-left: 10px
+}
+.settingslink:hover {
+  border-right: solid 2px #000;
+  background-color: #f8f8f8
+}
+.sidepannel .activesettingslink {
+  border-right: solid 2px var(--theme-color);
+}
+.sidepannel .activesettingslink i, .sidepannel .activesettingslink span {
+  color: var(--theme-color)
+}
+.settingspannel {
+  padding: 30px 40px;
+}
+.first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+.first .userimg {
+  display: flex;
+  align-items: center;
+  background-color: var(--gray);
+  padding: 5px 20px;
+  border-radius: 30px;
+  position: relative  ;
+}
+.routes .settingspannel h2 {
+  padding: 0;
+}
+.userimg:hover .email {
+  opacity: 1;
+}
+.userimg img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+.userimg .email {
+  position: absolute;
+  font-size: 12px;
+  opacity: 0;
+  left: 0;
+  background-color: var(--theme-color);
+  padding: 10px 20px;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: #fff
+}
+.second {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 20px
+}
+.second .image img{
+  width: 60%;
+  height: 100px;
+  border-radius: 5px;
+  margin-top: 10px
+}
+.changeimg .userimg {
+  margin-top: 10px
+}
+.settingslabel{
+  position: relative;
+
+}
+.overflow {
+  box-shadow: var(--shadow);
+  padding: 40px 15%;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow-y: scroll;
+  height: 80vh
+}
+.overflow::-webkit-scrollbar {
+  width: 0;
+}
+.description {
+  margin:  10px 0;
+}
+.changeimg {
+  margin: 10px 0;
+  display: flex;
+}
+.changeimg img {
+  margin-left: 0;
+  width: 50px;
+  height: 50px;
+}
+.settingslabel input {
+  background-color: var(--gray);
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.settingslabel span {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  color: rgb(179, 179, 179);
+  font-size: 14px;
+  transition: all 0.3s;
+  cursor: text
+}
+.settingslabel input:valid + span , .settingslabel input:focus + span {
+  top: 5px;
+  font-size: 12px;
+  left: 0;
+}
+.settingslabel input:valid + span {
+  color: var(--theme-color)
+}
+.upload label button {
+  pointer-events: none;
+
+}
+
+.settingsbtn {
+  width: 120px;
+  background-color: transparent;
+  border: solid 2px var(--theme-color);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: var(--theme-color)
+}
+ .settingsbtn i {
+  color: var(--theme-color);
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  transition: all 0.3s;
+}
+.settingsbtn:hover i {
+  top: 50% ;
+  transform: translateY(-50%);
+
+}
+.settingsbtn.red {
+  border: solid 2px rgb(255, 39, 39);
+  color: rgb(255, 39, 39)
+}
+.settingsbtn.red i {
+  color: rgb(255, 39, 39);
+}
+.settingsbtn span {
+  transition: all 0.3s;
+}
+.settingsbtn:hover span {
+  opacity: 0;
+}
+.settingsbtn:active {
+  transform: scale(0.95)
+}
+.second .settingsbtn {
+  width: 60%;
+  margin: 10px 0;
+  background-color: var(--theme-color);
+  color: #fff
+}
+.second .settingsbtn i {
+  color: #fff;
+}
+.overflow .msgs {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center
+}
+.msgs > div {
+  height: 120px;
+
+}
+
+.clearnotifs .settingsbtn {
+  width: 70px;
+  height: 20px;
+  font-size: 12px
+}
+.clearnotifs .settingsbtn i {
+  font-size: 12px
+}
+.acceptBtns {
+  display: flex;
+  margin-left: 5px;
+}
+.acceptBtns button {
+  font-size: 11px;
+  width: 80px;
+  margin-top: 0;
+  height: 25px
+}
+.rowmsg .msgcont > .flexrow {
+  margin-top: 10px
+}
+.acceptBtns i{
+  font-size: 13px;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px
+}
+.theme .stripe {
+  background-color: var(--theme-color);
+}
+
+.theme .dottedline {
+  border-right: solid 1px var(--theme-color)
+}
+.theme .rowmsg .bookmsg, .theme .rowmsg .bookmsg img  {
+  height: 40px ;
+  width: 40px;
+  border-radius: 50%
+}
+.bluetheme .stripe {
+  background-color: var(--theme-blue-color)
+}
+.bluetheme .dottedline {
+  border-right: solid 1px var(--theme-blue-color)
+}
+.thirdtheme .stripe {
+ background-color:  rgb(46, 245, 46)
+}
+
+.thirdtheme .dottedline {
+  border-right: solid 1px rgb(46, 245, 46);
+}
+.stylemsg {
+  position: absolute;
+  left: -20px;
+}
+.stripe {
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.dottedline {
+  height: 100%;
+  top: 0;
+  left: -13px;
+  transform: translateX(-50%);
+}
+.settingspannel .followers{
+  box-shadow: var(--shadow);
+  height: calc(100vh - 60px);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.settingspannel .followers button {
+  width: 100px;
+}
+.followerstab .aboutuser{
+  padding: 0;
+}
+.followerstab .profilepic  img{
+  margin-right: 10px;
+}
+.space {
+  display: none
+}
+.socialshare {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+@media (max-width: 1200px) {
+  .second .image img {
+    height: 200px
+  }
+}
+@media (max-width: 720px){
+  .routes .sidepannel h2 {
+    display: none
+  }
+  .routes .sidepannel .space {
+    display: block;
+  }
+  .sidepannel .settingslink {
+    justify-content: center;
+    align-items: center
+  }
+  .sidepannel .settingslink span{
+    display: none;
+  }
+  .account .userdiv .changeimg .userimg{
+    flex-direction: column;
+  }
+  .account .userdiv .changeimg .userimg .btns {
+    flex-direction: column;
+
+  }
+  .account .userdiv .changeimg .userimg .btns .settingsbtn {
+    margin-top: 10px;
+    width: 80px
+  }
+  .account .overflow {
+    padding: 20px 20px;
+  }
+  .account .second {
+    display: block
+  }
+  .account .overflow input, .account .overflow .image img , .account .overflow button{
+    width: 100%
+  }
+}
+@media (max-width: 650px) {
+  .settingspannel {
+      padding: 30px 10px
+  }
+  .settingspannel .followers  {
+    box-shadow: none;
+    border: solid 1px rgb(221, 221, 221)
+  }
+ }

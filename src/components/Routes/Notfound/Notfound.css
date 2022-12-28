@@ -1,0 +1,11 @@
+.notfound {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  top: 30%;
+  text-align: center;
+}
+.notfound .defaultmsg i {
+  font-size: 30px;
+}
