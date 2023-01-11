@@ -27,6 +27,7 @@ function Create(props) {
   const [pro, setPro] = useState(false);
   const [isbn, setIsbn] = useState("");
   const [aboutauthor, setAboutauthor] = useState("");
+  const [bookDescription, setBookDescription] = useState("");
   const { notification, setNotification, setNotifibool, notifibool } =
     useContext(ContextApp);
   const user = firebase.auth().currentUser;
@@ -92,6 +93,7 @@ function Create(props) {
         likes: 0,
         creatorname: user.displayName,
         aboutauthor,
+        bookDescription,
         likedby: [],
         pro,
         isbn,
@@ -122,6 +124,7 @@ function Create(props) {
       setCover("");
       setPro(false);
       setAboutauthor("");
+      setBookDescription("");
       setGenre("");
       setPdf("");
       setIsbn("");
@@ -210,6 +213,11 @@ function Create(props) {
                           state={title}
                         />
                         <Labelinput
+                          text="Book Description"
+                          setState={setBookDescription}
+                          state={bookDescription}
+                        />
+                        <Labelinput
                           text="Author"
                           setState={setAuthor}
                           state={author}
@@ -235,7 +243,7 @@ function Create(props) {
                           setState={setAward}
                           state={award}
                         />
-                        <label>
+                        {/* <label>
                           <small htmlFor="genreID"> Genres</small>
                           <div className="select_div">
                             <select
@@ -279,7 +287,16 @@ function Create(props) {
                             setState={setGenre}
                             state={genre}
                           />
-                        )}
+                        )} */}
+
+                        <Labelinput
+                          // isAddCustom={isAddCustom}
+                          // text="Add Custom Genre"
+                          text="Add Genre (separate by commas)"
+                          setState={setGenre}
+                          state={genre}
+                        />
+
                         <Labelinput
                           text="ISBN"
                           setState={setIsbn}

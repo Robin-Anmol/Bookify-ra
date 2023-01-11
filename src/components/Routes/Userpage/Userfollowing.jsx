@@ -13,6 +13,7 @@ function Userfollowing(props) {
         setUserinfo(snap.data()?.userinfo);
       });
   }, [user]);
+
   return (
     <div className="aboutuser">
       <User

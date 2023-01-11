@@ -89,6 +89,7 @@ function App() {
             email,
             uid: firebase.auth().currentUser.uid,
             description: "",
+            isAdmin: false,
             aboutcover: "https://i.imgur.com/EPGteyo.jpg",
           };
           {
@@ -209,6 +210,7 @@ function App() {
             uid: firebase.auth().currentUser?.uid,
             description: "",
             aboutcover: "https://i.imgur.com/ZmEcN9a.jpg",
+            isAdmin: false,
           };
           db.collection("users").doc(user.uid).set({
             created: new Date(),
@@ -282,6 +284,7 @@ function App() {
             uid: firebase.auth().currentUser.uid,
             description: "",
             aboutcover: "https://i.imgur.com/ZmEcN9a.jpg",
+            isAdmin: false,
           };
           db.collection("users").doc(user.uid).set({
             created: new Date(),

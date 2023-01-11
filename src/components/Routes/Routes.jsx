@@ -72,7 +72,7 @@ function Routes(props) {
       .doc(user.uid)
       .onSnapshot((snap) => {
         const booksdata = snap.data();
-        // console.log(booksdata);
+        console.log(booksdata);
         setUsersbooks(booksdata?.books);
       });
 
@@ -104,6 +104,7 @@ function Routes(props) {
       setHide(false);
     }
   }, [location]);
+  console.log(usersbooks);
   return (
     <div className="routes">
       <AnimatePresence>

@@ -41,16 +41,38 @@ function Booksdisplay(props) {
   const [gridview, setGridview] = useState(false);
   const [limit, setLimit] = useState(40);
   const user = firebase.auth().currentUser;
-  // const booksrow = books && books.map(book=>{
-  //   if(pattern.test('all')||pattern.test(book.genre.toLowerCase())||pattern.test(book.title.toLowerCase())||pattern.test(book.author.toLowerCase())){
-  //     return <Book  book={book} books={books}/>
-  //   }
-  // })
-  // const favoritesrow = favorites && favorites.map(book=>{
-  //   if(pattern.test(book.genre.toLowerCase())||pattern.test(book.title.toLowerCase())||pattern.test(book.author.toLowerCase())|| keyword==='saved'){
-  //   return <Book hidelike={hidelike} editable={editable} book={book} books={books}/>
-  //   }
-  // })
+  // const booksrow =
+  //   books &&
+  //   books.map((book) => {
+  //     if (
+  //       pattern.test("all") ||
+  //       pattern.test(book.genre.toLowerCase()) ||
+  //       pattern.test(book.title.toLowerCase()) ||
+  //       pattern.test(book.author.toLowerCase())
+  //     ) {
+  //       return <Book book={book} books={books} />;
+  //     }
+  //   });
+  // const favoritesrow =
+  //   favorites &&
+  //   favorites.map((book) => {
+  //     if (
+  //       pattern.test(book.genre.toLowerCase()) ||
+  //       pattern.test(book.title.toLowerCase()) ||
+  //       pattern.test(book.author.toLowerCase()) ||
+  //       keyword === "saved"
+  //     ) {
+  //       return (
+  //         <Book
+  //           hidelike={hidelike}
+  //           editable={editable}
+  //           book={book}
+  //           books={books}
+  //         />
+  //       );
+  //     }
+  //   });
+
   const filteredfavs = favorites
     ?.filter(
       (book) =>
@@ -72,6 +94,7 @@ function Booksdisplay(props) {
       icon="fal fa-layer-plus"
     />
   );
+  console.log(user.uid);
   const filtered = books
     ?.filter(
       (book) =>

@@ -94,6 +94,7 @@ function Individcomment(props) {
         setEnabled(snap.data()?.notifis);
       });
   }, [comment]);
+
   return (
     <div className="comment" id={comment.commentid}>
       <div className="leftcomment">

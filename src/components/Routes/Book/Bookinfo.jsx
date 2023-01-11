@@ -31,25 +31,30 @@ function Bookinfo(props) {
   const [title, setTitle] = useState(book && book.title);
   const [author, setAuthor] = useState(book && book.author);
   const [aboutauthor, setAboutauthor] = useState(book && book.aboutauthor);
+  const [bookDescription, setBookDescription] = useState(
+    book && book.bookDescription
+  );
   const [award, setAward] = useState(book && book.award);
   const [publisher, setPublisher] = useState(book && book.publisher);
   const [genre, setGenre] = useState(book && book.genre);
   const [pdf, setPdf] = useState(book && book.pdf);
   const [pro, setPro] = useState(book.pro);
   const [cover, setCover] = useState(book && book.cover);
-  const { setNotifibool, setNotification, allbooksdoc } =
+  const { setNotifibool, userIsAdmin, setNotification, allbooksdoc } =
     useContext(ContextApp);
   const [loading, setLoading] = useState(false);
   const [currentedit, setCurrentedit] = useState("");
   const [userispro, setUserispro] = useState(false);
   const [bookuser, setBookuser] = useState(book.userid);
   const [isbn, setIsbn] = useState(book?.isbn);
+
   function clearStates() {
     setGenre("");
     setPublisher("");
     setAward("");
     setPdf("");
     setAboutauthor("");
+    setBookDescription("");
     setAuthor("");
     setCover("");
     setTitle("");
@@ -62,6 +67,7 @@ function Bookinfo(props) {
     setAward(book?.award);
     setPdf(book?.pdf);
     setAboutauthor(book?.aboutauthor);
+    setBookDescription(book?.bookDescription);
     setAuthor(book?.author);
     setCover(book?.cover);
     setTitle(book?.title);
@@ -72,25 +78,48 @@ function Bookinfo(props) {
     setEdit(!edit);
 
     allbooks?.map((bookm) => {
-      if (book.bookid === bookm.bookid) {
+      if (bookm.bookid === book.bookid) {
         const bookindex = allbooks.indexOf(bookm);
         allbooks[bookindex].aboutauthor = aboutauthor;
+        allbooks[bookindex].bookDescription = bookDescription;
         allbooks[bookindex].title = title;
         allbooks[bookindex].author = author;
         allbooks[bookindex].award = award;
         allbooks[bookindex].publisher = publisher;
         allbooks[bookindex].genre = genre;
-        allbooks[bookindex].pdf = pdf;
+        allbooks[bookindex].pdf = pdf; //
         allbooks[bookindex].cover = cover;
-        allbooks[bookindex].pro = pro;
+        allbooks[bookindex].pro = pro; //
         allbooks[bookindex].isbn = isbn;
-        db.collection("allbooks").doc(allbooksdoc).update({
+        db.collection("allbooks").doc("allbooks").update({
           books: allbooks,
         });
       }
     });
+
+    books?.map((bookm) => {
+      if (bookm.bookid === book.bookid) {
+        const bookindex = books.indexOf(bookm);
+        books[bookindex].aboutauthor = aboutauthor;
+        books[bookindex].bookDescription = bookDescription;
+        books[bookindex].title = title;
+        books[bookindex].author = author;
+        books[bookindex].award = award;
+        books[bookindex].publisher = publisher;
+        books[bookindex].genre = genre;
+        books[bookindex].pdf = pdf;
+        books[bookindex].cover = cover;
+        books[bookindex].pro = pro;
+        books[bookindex].isbn = isbn;
+
+        db.collection("books").doc(user.uid).update({
+          books: books,
+        });
+      }
+    });
   }
-  function deleteFunc() {
+
+  const deleteFunc = () => {
     let deletevar = window.confirm(
       `Are you sure you would like to delete ${book.title}?`
     );
@@ -99,16 +128,30 @@ function Bookinfo(props) {
         if (bookm.bookid === book.bookid) {
           let bookIndex = allbooks?.indexOf(bookm);
           allbooks?.splice(bookIndex, 1);
+          console.log(allbooks);
           db.collection("allbooks").doc("allbooks").update({
             books: allbooks,
           });
         }
       });
+      console.log(book.bookid);
+
+      books?.map((bookm) => {
+        if (bookm.bookid === book.bookid) {
+          let bookIndex = books?.indexOf(bookm);
+          books?.splice(bookIndex, 1);
+
+          db.collection("books").doc(user.uid).update({
+            books: books,
+          });
+        }
+      });
+
       removeFavorite(favorites, book, user);
       setEdit(false);
       clearStates();
     }
-  }
+  };
   const loadingref = useRef();
   const fileref = useRef();
   function uploadImg(e) {
@@ -157,6 +200,12 @@ function Bookinfo(props) {
         setUserispro(snap.data()?.pro);
       });
   }, [book]);
+
+  // const saveBookHandler = () => {
+  //   console.log(book.bookid);
+  //   console.log(user.uid);
+  // };
+
   return (
     <>
       <CSSTransition in={edit} classNames="test" unmountOnExit timeout={0}>
@@ -194,15 +243,16 @@ function Bookinfo(props) {
             </div>
             <div className="edit">
               {editable ? (
-                <>
+                <div>
                   <Icon
                     icon="fal fa-times gridicondone"
                     setState={setEdit}
                     state={false}
                   />
+
                   <Icon icon="fal fa-save gridicondone" fnct={saveBook} />
                   <Icon icon="fal fa-trash gridicondone" fnct={deleteFunc} />
-                </>
+                </div>
               ) : (
                 ""
               )}
@@ -213,6 +263,11 @@ function Bookinfo(props) {
                   placeholder="Title"
                   value={title}
                   setValue={setTitle}
+                />
+                <Settingslabel
+                  placeholder="Book Description"
+                  value={bookDescription}
+                  setValue={setBookDescription}
                 />
                 <Settingslabel
                   placeholder="Author"
@@ -227,6 +282,7 @@ function Bookinfo(props) {
                     value={aboutauthor}
                     setValue={setAboutauthor}
                   />
+
                   <Settingslabel
                     placeholder="Awards (Seperate with commas)"
                     value={award}

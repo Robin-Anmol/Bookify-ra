@@ -51,5 +51,7 @@ export default function optionEdit(
             });
         }
       });
+  } else if (text.toLowerCase() === "report") {
+    console.log("report user");
   }
 }

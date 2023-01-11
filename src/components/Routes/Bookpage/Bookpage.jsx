@@ -279,6 +279,8 @@ function Bookpage(props) {
                   <span>0 Awards.</span>
                 )}
               </p>
+              <div style={{ margin: "1rem 0" }}></div>
+              <p>{book?.bookDescription}</p>
               <h3 style={{ color: "#000" }}>About Author</h3>
               <p className="capitalize">
                 {book?.aboutauthor ? book?.aboutauthor : "Nothing Available"}

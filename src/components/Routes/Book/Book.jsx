@@ -77,6 +77,7 @@ function Book(props) {
     });
   }
 
+  console.log(book.genre);
   useEffect(() => {
     db.collection("users")
       .doc(book.userid)

@@ -24,6 +24,7 @@ let ContextAppProvider = (props) => {
   const [allusers, setAllusers] = useState([]);
   const [userispro, setUserispro] = useState(false);
   // console.log(allusers);
+  const [userIsAdmin, setUserIsAdmin] = useState(false);
 
   useEffect(() => {
     db.collection("allusers")
@@ -35,11 +36,13 @@ let ContextAppProvider = (props) => {
       .doc(user.uid)
       .onSnapshot((snap) => {
         setUserispro(snap.data()?.pro);
+        setUserIsAdmin(snap.data()?.isAdmin);
       });
   }, []);
   return (
     <ContextApp.Provider
       value={{
+        userIsAdmin,
         userispro,
         allusers,
         setAllusers,
