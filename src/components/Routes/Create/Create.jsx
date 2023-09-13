@@ -77,7 +77,7 @@ function Create(props) {
 
   const bookid = db.collection("books").doc().id;
   function createBook() {
-    if (title && author && genre && publisher && cover && pdf && date) {
+    if (title && author && genre && publisher && cover && date) {
       const bookobj = {
         bookid,
         userid: user.uid,

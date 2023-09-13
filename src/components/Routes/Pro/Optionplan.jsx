@@ -14,11 +14,37 @@ function Optionplan(props) {
       });
   }, [mode]);
   function getProHandler(mode) {
-    db.collection("users").doc(user.uid).update({
-      pro: mode,
-    });
+    const options = {
+      key: "rzp_test_7ntcc6hkj3donX",
+      key_secret: "GlkBu1AjzOGwc7YPThcAnE5q",
+      amount: 249 * 100,
+      currency: "INR",
+      name: "Bookify Pro plan ",
+      description: "for testing purpose",
+      handler: function (response) {
+        console.log(response);
+        db.collection("users").doc(user.uid).update({
+          pro: mode,
+          updateAt: new Date(),
+        });
+      },
+      prefill: {
+        userId: user?.uid,
+        email: user?.email,
+        name: user?.displayName,
+      },
+      notes: {
+        address: "Razorpay Corporate office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    const pay = new window.Razorpay(options);
+    pay.open();
   }
 
+  console.log(user);
   return (
     <div className="option box-shadow-br">
       <div className="header flex">
@@ -26,20 +52,27 @@ function Optionplan(props) {
         <h2>
           Bookify <strong>{pro ? "Pro" : "Basic"}</strong>
         </h2>
-        <span>{pro ? "$2.99/Month" : "Free"}</span>
+        <span>{pro ? "Rs.249/Month" : "Free"}</span>
       </div>
       <div className="benefits flex">
         <div className="benefitstext flex">
           <span className="optionpro">
             <i className="fal fa-check"></i>
-            <span>{pro ? "View premium books" : "View free books"}</span>
+            {pro ? (
+              <span>View premium books</span>
+            ) : (
+              <span>View free books</span>
+            )}
           </span>
 
           <span className="optionpro">
             <i className="fal fa-check"></i>
-            <span>
-              {pro ? "Post unlimitted books " : "Post up to 50 books"}
-            </span>
+
+            {pro ? (
+              <span>Post unlimitted books</span>
+            ) : (
+              <span>Post up to 50 books</span>
+            )}
           </span>
 
           {pro && (
@@ -63,21 +96,32 @@ function Optionplan(props) {
               )}
             </button>
           ) : (
-            <button
-              onClick={
-                !userispro
-                  ? () => getProHandler(true)
-                  : () => getProHandler(false)
-              }
-              className={!userispro && pro ? "probtn" : "probtn lightbg"}
-            >
-              {!userispro && pro ? "Get Pro" : "Already Active"}
-              {!userispro && pro ? (
-                <i className="fal fa-shopping-bag"></i>
+            <>
+              {!userispro ? (
+                <button
+                  onClick={() => getProHandler(true)}
+                  className={!userispro && pro ? "probtn" : "probtn lightbg"}
+                >
+                  {!userispro && pro ? "Get Pro" : "Already Active"}
+                  {!userispro && pro ? (
+                    <i className="fal fa-shopping-bag"></i>
+                  ) : (
+                    <i className="fal fa-check"></i>
+                  )}
+                </button>
               ) : (
-                <i className="fal fa-check"></i>
+                <button
+                  className={!userispro && pro ? "probtn" : "probtn lightbg"}
+                >
+                  {!userispro && pro ? "Get Pro" : "Already Active"}
+                  {!userispro && pro ? (
+                    <i className="fal fa-shopping-bag"></i>
+                  ) : (
+                    <i className="fal fa-check"></i>
+                  )}
+                </button>
               )}
-            </button>
+            </>
           )}
           <small>
             See{" "}

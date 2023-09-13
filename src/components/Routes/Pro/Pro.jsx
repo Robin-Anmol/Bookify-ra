@@ -4,11 +4,10 @@ import Benefitsitem from "./Benefitsitem";
 import Optionplan from "./Optionplan";
 import "./Pro.css";
 function Pro() {
-  const [showpaypal, setShowpaypal] = useState(false);
-
   const getProHandler = () => {
     console.log("dd");
   };
+
   return (
     <div className="pro">
       <div className="bannerpro rotate">

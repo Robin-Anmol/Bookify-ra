@@ -288,7 +288,7 @@ function Bookpage(props) {
               <h3>ISBN #</h3>
               {book.isbn ? book.isbn : "Not Provided"}
               <h3>{book.pdf ? "Download PDF Here" : "No PDF Available"}</h3>
-              {book.pdf ? (
+              {book?.pdf !== "" ? (
                 <a href={book?.pdf} target="__blank">
                   PDF Download Here
                 </a>
